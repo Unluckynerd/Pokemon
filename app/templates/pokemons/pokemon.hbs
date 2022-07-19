@@ -1,0 +1,66 @@
+{{page-title "Pokemon"}}
+<button class="button" type="button"><LinkTo @route="pokemons"><img src="https://www.seekpng.com/png/detail/155-1554127_arrow-back-android-back-button-png.png"></LinkTo></button>
+<div class="mx-auto con text-capitalize overflow-auto">
+{{#each-in @model as |poke index|}}
+
+{{!--Character Name --}}
+<h3 class="text-center bg-info p-3">{{index.name}}</h3>
+
+{{!-- Character-Image  --}}
+
+
+<div class="d-flex">
+    
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{index.id}}.png" alt="{{index.name}}">
+
+    {{!-- Stats --}}
+
+    <div class="text-capitalize list-unstyled ">
+        <div class="d-flex">
+            <div class="w-50">#{{index.id}}</div>
+            {{#each index.types as |types|}}
+            <div class="w-25">{{types.type.name}}</div>
+            {{/each}}
+            
+        </div>
+        {{#each index.stats as |power|}}
+        <div class="d-flex mt-2">
+            <div class="align-items-start w-75">{{power.stat.name}}</div>
+                <progress value={{power.base_stat}} max="200" >{{power.base_stat}}</progress>{{power.base_stat}}
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+{{!-- Profile --}}
+
+<div>
+    <h3 class="text-center bg-info p-2">Profile</h3>
+    <div class="mt-4 mx-5">
+        <div>Height: {{index.height}} </div>
+        <div>Weight: {{index.weight}}</div>
+        <div>Abilities:<ul>{{#each index.abilities as |ability|}}
+            <li>{{ability.ability.name}}</li>
+            {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{{!-- Moves --}}
+
+<div>
+    <h3 class="text-center bg-info p-2">Moves</h3> 
+    <div class="mx-5">
+        <ul>
+            {{#each index.moves as |char| }}
+            <li>{{char.move.name}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+{{/each-in}}
+</div>
+
+{{outlet}}

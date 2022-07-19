@@ -1,0 +1,25 @@
+{{page-title "Index"}}
+
+
+<div class="container index">
+    <Input class="w-100" id="search_value" type="search" aria-label="search" @value={{this.name}} placeholder="Search" />
+
+    <div class="d-flex flex-wrap justify-content-evenly">
+    {{#each @model as |key|}}        
+            {{#if (containss this.name  key.name ) }}
+            <LinkTo class="btn" @route="pokemons.pokemon" @model={{key.id}} >
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{key.id}}.png" alt="{{key.name}}">
+                <span class="text-center">{{key.name}}</span>
+            </LinkTo>
+            {{else if (not this.name)}}
+            <LinkTo class="btn" @route="pokemons.pokemon" @model={{key.id}} >
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{key.id}}.png" alt="{{key.name}}">
+                <span class="text-center">{{key.name}}</span>
+            </LinkTo>
+            {{/if}}
+    {{/each}}
+    
+    </div>
+</div>
+
+{{outlet}}
