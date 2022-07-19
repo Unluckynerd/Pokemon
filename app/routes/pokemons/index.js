@@ -4,7 +4,7 @@ export default class PokemonsIndexRoute extends Route {
   async model() {
     const array = [];
     const response = await (
-      await fetch('https://pokeapi.co/api/v2/pokemon/?limit=500')
+      await fetch('https://pokeapi.co/api/v2/pokemon/?limit=200')
     ).json();
     let length = response.results.length;
     for (let i = 1; i <= length; i++) {
