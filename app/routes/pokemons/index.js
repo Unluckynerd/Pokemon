@@ -1,6 +1,18 @@
 import Route from '@ember/routing/route';
 
 export default class PokemonsIndexRoute extends Route {
+  queryParams = {
+    search: {
+      refreshModel: true,
+    },
+  };
+
+  queryParams = {
+    search: {
+      replace: true,
+    },
+  };
+
   async model() {
     const array = [];
     const response = await (
@@ -13,7 +25,6 @@ export default class PokemonsIndexRoute extends Route {
       ).json();
       array.push(res);
     }
-
     return array;
   }
 }

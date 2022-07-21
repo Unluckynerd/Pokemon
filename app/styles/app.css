@@ -1,3 +1,5 @@
+@import url(./styles.css);
+
 .load{
   position: relative;
   width:1000px;
@@ -42,7 +44,7 @@ figure img{
 .con{
   width: 700px;
   height: 90vh;
-  background-color: #E27d60;
+  background:linear-gradient(120deg,#FCDC4C , #00C489) ;
   border: 2px solid pink;
 }
 
@@ -73,4 +75,10 @@ figure img{
 
 body{
   background-color: #41b3a3;
+}
+
+.bag{
+  width: 60px;
+  margin: 0 10px;
+  text-align: center;
 }

@@ -1,7 +1,9 @@
 {{page-title "Pokemon"}}
-<button class="button" type="button"><LinkTo @route="pokemons"><img src="https://www.seekpng.com/png/detail/155-1554127_arrow-back-android-back-button-png.png"></LinkTo></button>
-<div class="mx-auto con text-capitalize overflow-auto">
+<LinkTo @route="pokemons"><button class="button" type="button"><img src="https://www.seekpng.com/png/detail/155-1554127_arrow-back-android-back-button-png.png"></button></LinkTo>
+
 {{#each-in @model as |poke index|}}
+<div class="mx-auto con text-capitalize  overflow-auto" style="background: {{color index.types}}" >
+
 
 {{!--Character Name --}}
 <h3 class="text-center bg-info p-3">{{index.name}}</h3>
@@ -15,11 +17,11 @@
 
     {{!-- Stats --}}
 
-    <div class="text-capitalize list-unstyled ">
+    <div class=" list-unstyled ">
         <div class="d-flex">
             <div class="w-50">#{{index.id}}</div>
             {{#each index.types as |types|}}
-            <div class="w-25">{{types.type.name}}</div>
+            <div class="bag bag-{{types.type.name}}">{{types.type.name}}</div>
             {{/each}}
             
         </div>
@@ -60,7 +62,8 @@
     </div>
 </div>
 
-{{/each-in}}
 </div>
+{{/each-in}}
+
 
 {{outlet}}
