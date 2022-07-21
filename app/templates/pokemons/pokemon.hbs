@@ -2,7 +2,8 @@
 <LinkTo @route="pokemons"><button class="button" type="button"><img src="https://www.seekpng.com/png/detail/155-1554127_arrow-back-android-back-button-png.png"></button></LinkTo>
 
 {{#each-in @model as |poke index|}}
-<div class="mx-auto con text-capitalize  overflow-auto"  >
+<div class="d-flex">
+<div class="mx-auto con text-capitalize overflow-auto"  >
 
 
 {{!--Character Name --}}
@@ -63,7 +64,9 @@
 </div>
 
 </div>
+</div>
 {{/each-in}}
+
 
 
 {{outlet}}
