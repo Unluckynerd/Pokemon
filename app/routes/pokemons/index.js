@@ -28,9 +28,9 @@ export default class PokemonsIndexRoute extends Route {
     return array;
   }
 
-  // afterModel(model, transition) {
-  //   if (model.get('length') === 1) {
-  //     this.router.transitionTo('pokemons/', model.get('model.id'));
-  //   }
-  // }
+  afterModel(array) {
+    if (array.length === 1) {
+      this.transitionTo(`pokemons/${array.id}`);
+    }
+  }
 }

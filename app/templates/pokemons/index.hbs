@@ -11,11 +11,11 @@
                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{key.id}}.png" alt="{{key.name}}">
                 <span class="text-center">{{key.name}}</span>
             </LinkTo>
-            {{else if (not this.search)}}
+            {{!-- {{else if (not this.search)}}
             <LinkTo class="btn" @route="pokemons.pokemon" @model={{key.id}} style="background: {{color key.types}} ">
                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{key.id}}.png" alt="{{key.name}}">
                 <span class="text-center">{{key.name}}</span>
-            </LinkTo>
+            </LinkTo> --}}
             {{/if}}
     {{/each}}
     

@@ -130,5 +130,12 @@ body{
     width: 125px;
   }
 
+  .transparent{
+    width: 250px;
+    height: 250px;
+  }
+}
 
+#transparent{
+  background-image: none;
 }
